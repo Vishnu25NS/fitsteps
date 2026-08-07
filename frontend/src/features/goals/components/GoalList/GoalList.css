@@ -1,0 +1,49 @@
+.goal-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.goal-list-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin-bottom: 4px;
+}
+
+/* Empty State */
+.goals-empty-state {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  color: var(--color-outline-variant);
+  margin-bottom: 8px;
+}
+
+.empty-state-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.empty-state-text {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  max-width: 280px;
+  line-height: 20px;
+}
+
+.create-first-goal-btn {
+  margin-top: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+}

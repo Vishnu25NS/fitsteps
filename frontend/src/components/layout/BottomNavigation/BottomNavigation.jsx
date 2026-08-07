@@ -1,29 +1,31 @@
 import React from 'react';
-import { MdHome, MdLeaderboard, MdEditNote, MdSettings } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
+import { MdHome, MdLeaderboard, MdFlag, MdDirectionsRun, MdSettings } from 'react-icons/md';
 import './BottomNavigation.css';
 
-function BottomNavigation({ activeTab = 'home', onTabChange }) {
-  const tabs = [
-    { id: 'home', label: 'Home', icon: MdHome },
-    { id: 'analytics', label: 'Analytics', icon: MdLeaderboard },
-    { id: 'checkin', label: 'Check-in', icon: MdEditNote },
-    { id: 'settings', label: 'Settings', icon: MdSettings },
+function BottomNavigation() {
+  const navItems = [
+    { path: '/', label: 'Home', icon: MdHome },
+    { path: '/analytics', label: 'Analytics', icon: MdLeaderboard },
+    { path: '/goals', label: 'Goals', icon: MdFlag },
+    { path: '/activities', label: 'Activities', icon: MdDirectionsRun },
+    { path: '/settings', label: 'Settings', icon: MdSettings },
   ];
 
   return (
     <nav className="bottom-nav">
-      {tabs.map((tab) => {
-        const IconComponent = tab.icon;
-        const isActive = activeTab === tab.id;
+      {navItems.map((item) => {
+        const IconComponent = item.icon;
         return (
-          <button
-            key={tab.id}
-            className={`nav-item ${isActive ? 'active' : ''}`}
-            onClick={() => onTabChange && onTabChange(tab.id)}
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            end={item.path === '/'}
           >
             <IconComponent className="nav-icon" />
-            <span className="nav-label">{tab.label}</span>
-          </button>
+            <span className="nav-label">{item.label}</span>
+          </NavLink>
         );
       })}
     </nav>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/layout/Header';
 import BottomNavigation from '../components/layout/BottomNavigation';
 import FloatingActionButton from '../components/layout/FloatingActionButton';
@@ -12,7 +12,6 @@ import RecentActivities from '../features/dashboard/components/RecentActivities'
 import './Dashboard.css';
 
 function Dashboard() {
-  const [activeTab, setActiveTab] = useState('home');
   const { data, loading, error } = useDashboardData();
 
   if (loading) {
@@ -73,10 +72,7 @@ function Dashboard() {
 
       <FloatingActionButton onClick={handleAddActivity} />
 
-      <BottomNavigation
-        activeTab={activeTab}
-        onTabChange={(tabId) => setActiveTab(tabId)}
-      />
+      <BottomNavigation />
     </div>
   );
 }

@@ -1,0 +1,54 @@
+.goals-overview-card {
+  padding: 20px;
+  width: 100%;
+}
+
+.goals-overview-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.goals-overview-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.overview-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--color-on-surface);
+}
+
+.stat-value.total {
+  color: var(--color-primary);
+}
+
+.stat-value.active {
+  color: var(--color-secondary);
+}
+
+.stat-value.completed {
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.stat-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-on-surface-variant);
+  margin-top: 4px;
+  text-align: center;
+}
