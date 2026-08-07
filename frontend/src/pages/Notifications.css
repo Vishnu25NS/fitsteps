@@ -1,0 +1,20 @@
+.notifications-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.notifications-loading,
+.notifications-error {
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-main {
+  padding: var(--spacing-stack-md) var(--spacing-margin-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-stack-lg);
+  flex: 1;
+}

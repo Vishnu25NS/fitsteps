@@ -1,0 +1,134 @@
+.activity-card {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.activity-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.activity-badge-icon.walking {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.activity-badge-icon.running {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+}
+
+.activity-badge-icon.cycling {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.activity-badge-icon.workout {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+.activity-badge-icon.swimming {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.activity-badge-icon.yoga {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+}
+
+.activity-badge-icon.hiking {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.activity-badge-icon.other {
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+}
+
+.activity-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  line-height: 22px;
+}
+
+.activity-card-category {
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.activity-card-datetime {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-outline);
+  text-transform: uppercase;
+}
+
+/* Stats Pill Bar */
+.activity-stats-row {
+  display: flex;
+  gap: 12px;
+  background-color: var(--color-surface-container-low);
+  padding: 10px 14px;
+  border-radius: var(--radius-xl);
+}
+
+.activity-stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.activity-stat-label {
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+}
+
+/* Notes bubble */
+.activity-notes-box {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface);
+  padding: 8px 12px;
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Footer / Actions */
+.activity-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-surface-container);
+}

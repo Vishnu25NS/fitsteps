@@ -1,0 +1,33 @@
+.notif-toolbar-card {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.notif-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notif-toolbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.notif-badge-chip {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.mark-all-read-btn {
+  font-size: 13px;
+  padding: 6px 12px;
+}

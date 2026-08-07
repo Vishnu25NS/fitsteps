@@ -1,0 +1,35 @@
+.notif-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.notif-empty-state {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.notif-empty-icon {
+  font-size: 48px;
+  color: var(--color-outline-variant);
+  margin-bottom: 8px;
+}
+
+.notif-empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.notif-empty-text {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  max-width: 280px;
+  line-height: 20px;
+}

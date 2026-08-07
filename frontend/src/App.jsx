@@ -6,6 +6,7 @@ import Activities from './pages/Activities';
 import Analytics from './pages/Analytics';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
+import Notifications from './pages/Notifications';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
     </Router>
   );

@@ -102,6 +102,10 @@ function GoalModal({ isOpen, onClose, onSave, initialData = null }) {
               <option value="Running">Running</option>
               <option value="Cycling">Cycling</option>
               <option value="Workout">Workout</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Hiking">Hiking</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 

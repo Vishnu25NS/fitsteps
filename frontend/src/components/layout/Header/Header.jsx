@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IoNotifications } from 'react-icons/io5';
 import Avatar from '../../common/Avatar';
 import Button from '../../common/Button';
@@ -10,10 +11,39 @@ function Header({
   avatarUrl,
   hasUnreadNotifications = true,
   onNotificationClick,
+  onAvatarClick,
 }) {
+  const navigate = useNavigate();
+
+  const handleAvatarClick = (e) => {
+    if (onAvatarClick) {
+      onAvatarClick(e);
+    } else {
+      navigate('/profile');
+    }
+  };
+
+  const handleNotifClick = (e) => {
+    if (onNotificationClick) {
+      onNotificationClick(e);
+    } else {
+      navigate('/notifications');
+    }
+  };
+
   return (
     <header className="fitsteps-header">
-      <div className="header-user-info">
+      <div
+        className="header-user-info"
+        onClick={handleAvatarClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleAvatarClick(e);
+          }
+        }}
+      >
         <Avatar src={avatarUrl} alt={`${userName}'s profile avatar`} size={40} />
         <div className="user-greeting">
           <span className="greeting-text">{greeting}</span>
@@ -22,7 +52,7 @@ function Header({
       </div>
       <Button
         variant="icon"
-        onClick={onNotificationClick}
+        onClick={handleNotifClick}
         ariaLabel="Notifications"
       >
         <IoNotifications className="notification-icon" />

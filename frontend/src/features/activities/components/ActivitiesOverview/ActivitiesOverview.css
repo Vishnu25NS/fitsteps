@@ -1,0 +1,53 @@
+.activities-overview-card {
+  padding: 20px;
+  width: 100%;
+}
+
+.activities-overview-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.activities-overview-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.overview-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.stat-num.workouts {
+  color: var(--color-primary);
+}
+
+.stat-num.calories {
+  color: var(--color-on-error-container);
+}
+
+.stat-num.duration {
+  color: var(--color-on-secondary-container);
+}
+
+.stat-sublabel {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-on-surface-variant);
+  margin-top: 4px;
+  text-align: center;
+}

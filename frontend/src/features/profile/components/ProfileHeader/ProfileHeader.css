@@ -1,0 +1,53 @@
+.profile-header-card {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.edit-photo-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 2px solid var(--color-surface-container-lowest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.edit-photo-btn:hover {
+  background-color: var(--color-on-primary-fixed-variant);
+  transform: scale(1.05);
+}
+
+.edit-photo-icon {
+  font-size: 16px;
+}
+
+.profile-header-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 28px;
+}
+
+.profile-header-email {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  margin-top: 4px;
+}

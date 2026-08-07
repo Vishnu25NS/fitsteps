@@ -1,0 +1,19 @@
+.fitness-form-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.fitness-form-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.fitness-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

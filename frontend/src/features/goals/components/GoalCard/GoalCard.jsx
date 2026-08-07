@@ -4,6 +4,10 @@ import {
   MdDirectionsRun,
   MdDirectionsBike,
   MdFitnessCenter,
+  MdPool,
+  MdHiking,
+  MdSelfImprovement,
+  MdSportsGymnastics,
   MdEdit,
   MdDeleteOutline,
 } from 'react-icons/md';
@@ -16,6 +20,10 @@ const ACTIVITY_ICON_MAP = {
   Running: MdDirectionsRun,
   Cycling: MdDirectionsBike,
   Workout: MdFitnessCenter,
+  Swimming: MdPool,
+  Hiking: MdHiking,
+  Yoga: MdSelfImprovement,
+  Other: MdSportsGymnastics,
 };
 
 function GoalCard({ goal, onEdit, onDelete }) {
