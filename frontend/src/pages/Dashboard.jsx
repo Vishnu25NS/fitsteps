@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import BottomNavigation from '../components/layout/BottomNavigation';
 import FloatingActionButton from '../components/layout/FloatingActionButton';
@@ -8,11 +9,15 @@ import { useDashboardData } from '../features/dashboard/hooks/useDashboardData';
 import ProgressSection from '../features/dashboard/components/ProgressSection';
 import WeeklySummary from '../features/dashboard/components/WeeklySummary';
 import RecentActivities from '../features/dashboard/components/RecentActivities';
+import ActivityModal from '../features/activities/components/ActivityModal';
+import { createActivity } from '../features/activities/services/activityService';
 
 import './Dashboard.css';
 
 function Dashboard() {
+  const navigate = useNavigate();
   const { data, loading, error } = useDashboardData();
+  const [isActivityModalOpen, setIsActivityModalOpen] = useState(false);
 
   if (loading) {
     return (
@@ -32,16 +37,21 @@ function Dashboard() {
 
   const { user, progress, weeklySummary, recentActivities } = data;
 
-  const handleNotificationClick = () => {
-    console.log('Notification button clicked');
+  const handleAddActivity = () => {
+    setIsActivityModalOpen(true);
   };
 
-  const handleAddActivity = () => {
-    console.log('Add activity FAB clicked');
+  const handleCloseActivityModal = () => {
+    setIsActivityModalOpen(false);
+  };
+
+  const handleSaveActivity = async (newActivity) => {
+    await createActivity(newActivity);
+    setIsActivityModalOpen(false);
   };
 
   const handleSeeAllActivities = () => {
-    console.log('See all activities clicked');
+    navigate('/activities');
   };
 
   return (
@@ -51,7 +61,6 @@ function Dashboard() {
         greeting={user.greeting}
         avatarUrl={user.avatarUrl}
         hasUnreadNotifications={user.hasUnreadNotifications}
-        onNotificationClick={handleNotificationClick}
       />
 
       <main className="dashboard-main">
@@ -71,6 +80,12 @@ function Dashboard() {
       </main>
 
       <FloatingActionButton onClick={handleAddActivity} />
+
+      <ActivityModal
+        isOpen={isActivityModalOpen}
+        onClose={handleCloseActivityModal}
+        onSave={handleSaveActivity}
+      />
 
       <BottomNavigation />
     </div>
