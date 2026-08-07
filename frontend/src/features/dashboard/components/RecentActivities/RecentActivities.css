@@ -1,0 +1,118 @@
+.recent-activities-section {
+  width: 100%;
+}
+
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-stack-sm);
+}
+
+.activities-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--color-on-surface);
+}
+
+.activities-list-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(231, 232, 234, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.activity-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-icon-badge.walk {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.activity-icon-badge.bike {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+}
+
+.activity-icon-badge.swim {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.activity-icon {
+  font-size: 24px;
+}
+
+.activity-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-meta {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-stats {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.activity-calories {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-on-surface);
+  display: block;
+}
+
+.activity-time {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: var(--color-outline);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}

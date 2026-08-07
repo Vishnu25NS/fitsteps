@@ -1,0 +1,52 @@
+.fitsteps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-stack-sm) var(--spacing-margin-mobile);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting-text {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-on-surface-variant);
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.notification-icon {
+  font-size: 22px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-error);
+  border-radius: var(--radius-full);
+}

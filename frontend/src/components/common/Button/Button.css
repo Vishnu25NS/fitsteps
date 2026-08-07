@@ -1,0 +1,50 @@
+.common-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.common-button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-2xl);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 88, 190, 0.2);
+}
+
+.common-button--primary:hover {
+  background-color: var(--color-on-primary-fixed-variant);
+}
+
+.common-button--icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--color-on-surface-variant);
+  position: relative;
+}
+
+.common-button--icon:hover {
+  opacity: 0.8;
+  background-color: var(--color-surface-container-high);
+}
+
+.common-button--icon:active {
+  transform: scale(0.95);
+}
+
+.common-button--text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.common-button--text:hover {
+  text-decoration: underline;
+}

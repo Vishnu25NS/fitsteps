@@ -1,0 +1,104 @@
+.weekly-summary-section {
+  width: 100%;
+}
+
+.weekly-summary-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--color-on-surface);
+  margin-bottom: var(--spacing-stack-sm);
+}
+
+.weekly-summary-card {
+  padding: 20px;
+  height: 192px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+}
+
+.chart-grid-lines {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-surface-container);
+}
+
+.bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.bar-wrapper {
+  width: 100%;
+  max-width: 24px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.bar {
+  width: 100%;
+  background-color: var(--color-primary-fixed);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.bar-column:hover .bar {
+  background-color: var(--color-primary);
+}
+
+.bar-column.is-peak .bar {
+  background-color: var(--color-primary);
+}
+
+.peak-tooltip {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-inverse-surface);
+  color: var(--color-inverse-on-surface);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.bar-label {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.bar-column.is-peak .bar-label {
+  color: var(--color-primary);
+  font-weight: 700;
+}
