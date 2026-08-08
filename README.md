@@ -7,12 +7,12 @@ Backend: https://fitsteps-5dzf.onrender.com/docs
 ## Features
 - Activity tracking (CRUD)
 - Goal management (CRUD)
-- Analytics dashboard (weekly avg, streaks, best day)
+- Analytics dashboard (weekly avg, streak, best day)
 - Activity categorization
 
 ## Tech Stack
-- FastAPI (Backend)
-- React + Vite (Frontend)
+- FastAPI
+- React (Vite)
 - SQLite
 - Axios
 
@@ -29,5 +29,4 @@ npm install
 npm run dev  
 
 ## Environment
-
 VITE_API_URL=https://fitsteps-5dzf.onrender.com

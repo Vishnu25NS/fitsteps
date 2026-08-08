@@ -1,8 +1,16 @@
 import axios from 'axios';
 
+const rawApiUrl = import.meta.env.VITE_API_URL;
+
+if (!rawApiUrl) {
+  console.warn('[API Client Warning]: VITE_API_URL environment variable is missing. Falling back to production backend.');
+}
+
+const baseURL = (rawApiUrl || 'https://fitsteps-5dzf.onrender.com').replace(/\/+$/, '');
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
-  timeout: 5000,
+  baseURL,
+  timeout: 10000,
 });
 
 api.interceptors.response.use(
