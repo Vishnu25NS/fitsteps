@@ -6,7 +6,7 @@ from app.schemas.activity import ActivityCreate, ActivityUpdate
 
 
 def create_activity(db: Session, activity: ActivityCreate) -> Activity:
-    db_activity = Activity(**activity.model_dump())
+    db_activity = Activity(**activity.model_dump(by_alias=False))
 
     db.add(db_activity)
     db.commit()
@@ -30,7 +30,7 @@ def update_activity(
     db_activity: Activity,
     activity: ActivityUpdate,
 ) -> Activity:
-    update_data = activity.model_dump(exclude_unset=True)
+    update_data = activity.model_dump(exclude_unset=True, by_alias=False)
 
     for key, value in update_data.items():
         setattr(db_activity, key, value)

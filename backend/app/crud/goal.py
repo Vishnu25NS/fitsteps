@@ -6,7 +6,7 @@ from app.schemas.goal import GoalCreate, GoalUpdate
 
 
 def create_goal(db: Session, goal: GoalCreate) -> Goal:
-    db_goal = Goal(**goal.model_dump())
+    db_goal = Goal(**goal.model_dump(by_alias=False))
 
     db.add(db_goal)
     db.commit()
@@ -30,7 +30,7 @@ def update_goal(
     db_goal: Goal,
     goal: GoalUpdate,
 ) -> Goal:
-    update_data = goal.model_dump(exclude_unset=True)
+    update_data = goal.model_dump(exclude_unset=True, by_alias=False)
 
     for key, value in update_data.items():
         setattr(db_goal, key, value)

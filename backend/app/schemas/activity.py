@@ -4,12 +4,12 @@ from pydantic import BaseModel, ConfigDict, Field
 
 class ActivityBase(BaseModel):
     title: str = Field(default="Workout", min_length=1, max_length=100)
-    category: str = Field(default="Walking", min_length=2, max_length=50, alias="activity_type")
-    duration: int = Field(..., gt=0, alias="duration_minutes")
-    distance: float | None = Field(default=None, ge=0, alias="distance_km")
+    category: str = Field(default="Walking", min_length=2, max_length=50)
+    duration: int = Field(..., gt=0)
+    distance: float | None = Field(default=None, ge=0)
     calories: int | None = Field(default=None, ge=0)
     notes: str | None = Field(default=None, max_length=500)
-    dateTime: datetime = Field(..., alias="date_time")
+    date_time: datetime = Field(..., alias="dateTime")
 
     model_config = ConfigDict(
         from_attributes=True,
@@ -23,12 +23,12 @@ class ActivityCreate(ActivityBase):
 
 class ActivityUpdate(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=100)
-    category: str | None = Field(default=None, min_length=2, max_length=50, alias="activity_type")
-    duration: int | None = Field(default=None, gt=0, alias="duration_minutes")
-    distance: float | None = Field(default=None, ge=0, alias="distance_km")
+    category: str | None = Field(default=None, min_length=2, max_length=50)
+    duration: int | None = Field(default=None, gt=0)
+    distance: float | None = Field(default=None, ge=0)
     calories: int | None = Field(default=None, ge=0)
     notes: str | None = Field(default=None, max_length=500)
-    dateTime: datetime | None = Field(default=None, alias="date_time")
+    date_time: datetime | None = Field(default=None, alias="dateTime")
 
     model_config = ConfigDict(
         from_attributes=True,

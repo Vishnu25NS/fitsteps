@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import activities, goals
+import app.models
+from app.routers import activities, analytics, goals
 
 from app.core.config import settings
 from app.db import Base, engine
@@ -31,6 +32,12 @@ app.include_router(
     goals.router,
     prefix="/goals",
     tags=["Goals"],
+)
+
+app.include_router(
+    analytics.router,
+    prefix="/analytics",
+    tags=["Analytics"],
 )
 
 
