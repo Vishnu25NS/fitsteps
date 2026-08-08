@@ -1,28 +1,33 @@
 # FitSteps – Fitness Tracker
 
+## Live Demo
+Frontend: https://fitsteps-lemon.vercel.app  
+Backend: https://fitsteps-5dzf.onrender.com/docs
+
 ## Features
 - Activity tracking (CRUD)
 - Goal management (CRUD)
-- Analytics dashboard
+- Analytics dashboard (weekly avg, streaks, best day)
 - Activity categorization
 
 ## Tech Stack
-- FastAPI
-- React (Vite)
+- FastAPI (Backend)
+- React + Vite (Frontend)
 - SQLite
 - Axios
 
 ## Setup
 
-Backend:
-cd backend
-uvicorn app.main:app --reload
+### Backend
+cd backend  
+pip install -r requirements.txt  
+uvicorn app.main:app --reload  
 
-Frontend:
-cd frontend
-npm install
-npm run dev
+### Frontend
+cd frontend  
+npm install  
+npm run dev  
 
 ## Environment
 
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=https://fitsteps-5dzf.onrender.com
