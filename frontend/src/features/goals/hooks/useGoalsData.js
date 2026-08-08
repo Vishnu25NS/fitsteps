@@ -12,10 +12,11 @@ export function useGoalsData() {
     try {
       setLoading(true);
       const data = await fetchGoals();
-      setGoals(data);
+      setGoals(Array.isArray(data) ? data : []);
       setError(null);
     } catch (err) {
-      setError('Failed to fetch goals.');
+      setError(err?.message || 'Failed to fetch goals.');
+      setGoals([]);
     } finally {
       setLoading(false);
     }
@@ -64,12 +65,13 @@ export function useGoalsData() {
   };
 
   // Overview metrics
-  const totalGoals = goals.length;
-  const activeGoals = goals.filter((g) => g.status === 'Active').length;
-  const completedGoals = goals.filter((g) => g.status === 'Completed').length;
+  const safeGoals = Array.isArray(goals) ? goals : [];
+  const totalGoals = safeGoals.length;
+  const activeGoals = safeGoals.filter((g) => g.status === 'Active').length;
+  const completedGoals = safeGoals.filter((g) => g.status === 'Completed').length;
 
   return {
-    goals,
+    goals: safeGoals,
     loading,
     error,
     isModalOpen,

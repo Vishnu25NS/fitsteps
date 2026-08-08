@@ -17,10 +17,11 @@ export function useActivitiesData() {
     try {
       setLoading(true);
       const data = await fetchActivities();
-      setActivities(data);
+      setActivities(Array.isArray(data) ? data : []);
       setError(null);
     } catch (err) {
-      setError('Failed to fetch activity history.');
+      setError(err?.message || 'Failed to fetch activity history.');
+      setActivities([]);
     } finally {
       setLoading(false);
     }
@@ -69,12 +70,13 @@ export function useActivitiesData() {
   };
 
   // Summary Metrics
-  const totalWorkouts = activities.length;
-  const totalCalories = activities.reduce((sum, a) => sum + (Number(a.calories) || 0), 0);
-  const totalDuration = activities.reduce((sum, a) => sum + (Number(a.duration) || 0), 0);
+  const safeActivities = Array.isArray(activities) ? activities : [];
+  const totalWorkouts = safeActivities.length;
+  const totalCalories = safeActivities.reduce((sum, a) => sum + (Number(a.calories) || 0), 0);
+  const totalDuration = safeActivities.reduce((sum, a) => sum + (Number(a.duration) || 0), 0);
 
   return {
-    activities,
+    activities: safeActivities,
     loading,
     error,
     isModalOpen,
