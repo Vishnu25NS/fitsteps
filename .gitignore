@@ -1,0 +1,44 @@
+# ----------------------------
+# Python
+# ----------------------------
+venv/
+__pycache__/
+*.pyc
+
+# ----------------------------
+# Node.js
+# ----------------------------
+node_modules/
+dist/
+
+# ----------------------------
+# Environment Variables
+# ----------------------------
+.env
+.env.local
+
+# ----------------------------
+# IDE
+# ----------------------------
+.vscode/
+
+# ----------------------------
+# Operating System
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Build / Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+
+# Mac
+.AppleDouble
+.LSOverride

@@ -1,70 +1,41 @@
-// activityService.js - Service layer for Activities feature
-
-let mockActivities = [
-  {
-    id: 'act-1',
-    title: 'Morning Walk',
-    category: 'Walking',
-    duration: 30,
-    distance: 2.5,
-    calories: 320,
-    notes: 'Felt energetic and refreshed!',
-    dateTime: '2026-08-07T08:30',
-  },
-  {
-    id: 'act-2',
-    title: 'Coastal Cycling',
-    category: 'Cycling',
-    duration: 45,
-    distance: 12.0,
-    calories: 410,
-    notes: 'Breezy ride along the coast.',
-    dateTime: '2026-08-06T17:15',
-  },
-  {
-    id: 'act-3',
-    title: 'Evening Swim Laps',
-    category: 'Swimming',
-    duration: 40,
-    distance: 1.2,
-    calories: 450,
-    notes: 'Great workout, completed 30 laps.',
-    dateTime: '2026-08-05T19:00',
-  },
-  {
-    id: 'act-4',
-    title: 'Sunset Yoga Flow',
-    category: 'Yoga',
-    duration: 35,
-    distance: 0,
-    calories: 180,
-    notes: 'Relaxing stretch and core stability.',
-    dateTime: '2026-08-04T18:30',
-  },
-];
+import api from '../../../services/api';
 
 export async function fetchActivities() {
-  return Promise.resolve([...mockActivities]);
+  try {
+    const response = await api.get('/activities');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching activities:', error);
+    throw error;
+  }
 }
 
 export async function createActivity(activityData) {
-  const newActivity = {
-    id: `act-${Date.now()}`,
-    ...activityData,
-  };
-  mockActivities = [newActivity, ...mockActivities];
-  return Promise.resolve(newActivity);
+  try {
+    const response = await api.post('/activities', activityData);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating activity:', error);
+    throw error;
+  }
 }
 
 export async function updateActivity(id, updatedFields) {
-  mockActivities = mockActivities.map((act) =>
-    act.id === id ? { ...act, ...updatedFields } : act
-  );
-  const updated = mockActivities.find((act) => act.id === id);
-  return Promise.resolve(updated);
+  try {
+    const response = await api.put(`/activities/${id}`, updatedFields);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating activity ${id}:`, error);
+    throw error;
+  }
 }
 
 export async function deleteActivity(id) {
-  mockActivities = mockActivities.filter((act) => act.id !== id);
-  return Promise.resolve({ success: true, id });
+  try {
+    const response = await api.delete(`/activities/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error deleting activity ${id}:`, error);
+    throw error;
+  }
 }

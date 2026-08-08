@@ -1,0 +1,10 @@
+fastapi==0.122.0
+uvicorn==0.52.1
+SQLAlchemy==2.0.51
+pydantic==2.13.4
+pydantic-settings==2.11.0
+python-dotenv==1.1.1
+python-multipart==0.0.32
+greenlet==3.5.4
+typing_extensions==4.16.0
+typing-inspection==0.4.2
